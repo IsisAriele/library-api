@@ -1,6 +1,7 @@
 import express from "express";
 import conectaDataBase from "./config/dbConnect.js";
-import livro from "./models/Livro.js";
+// import livro from "./models/Livro.js";
+import routes from "./routes/index.js";
 
 const conexao = await conectaDataBase();
 
@@ -13,16 +14,18 @@ conexao.once("open", () => {
 })
 
 const app = express();
-app.use(express.json()); 
+routes(app);
 
-app.get("/", (req, res) => {
-    res.status(200).send("Curso de Node.js"); // envio da resposta é uma string
-});
+// app.use(express.json()); 
 
-app.get("/livros", async (req, res) => {
-    const listaLivros = await livro.find({});
-    res.status(200).json(listaLivros); // envio da resposta em json
-});
+// app.get("/", (req, res) => {
+//     res.status(200).send("Curso de Node.js"); 
+// });
+
+// app.get("/livros", async (req, res) => {
+//     const listaLivros = await livro.find({});
+//     res.status(200).json(listaLivros); 
+// });
 
 app.get("/livros/:id", (req, res) => {
     const index = buscaLivro(req.params.id);
@@ -37,7 +40,7 @@ app.post("/livros", (req, res) => {
 app.put("/livros/:id", (req, res) => {
     const index = buscaLivro(req.params.id);
     livros[index].titulo = req.body.titulo;
-    res.status(200).json(livros); // facilitando pra ver como esta tudo
+    res.status(200).json(livros); 
 })
 
 app.delete("/livros/:id", (req, res) => {
