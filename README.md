@@ -102,9 +102,34 @@ npm run dev
 ---
 
 ## Melhorias Futuras
-- Implementação de autenticação de usuários.
-- Adição de validações mais robustas nos modelos de dados.
-- Criação de rotas para gerenciamento de autores, usuários e empréstimos.
+#### Implementação de autenticação de usuários.
+- Autenticação com JWT, middleware de proteção de rotas e controle de sessão.
+
+#### Adição de validações mais robustas nos modelos de dados.
+- Validações com express-validator para campos obrigatórios, formatos de dados e regras de negócio.
+
+#### Criação de rotas para gerenciamento de autores, usuários e empréstimos.
+- Cadastro, consulta, atualização e remoção de autores, usuários e registros de empréstimos.
+
+#### Controle de acesso por tipo de usuário.
+- Definição de papéis (admin, bibliotecário, leitor) e permissões específicas por papel.
+
+#### Sistema de empréstimo e devolução de livros.
+- Registro de data de empréstimo, devolução, controle de disponibilidade e histórico.
+
+#### Notificações por e-mail.
+- Envio automático de lembretes de devolução e confirmações de empréstimo.
+
+#### Dashboard de estatísticas.
+- Visualização de livros mais emprestados, usuários ativos e indicadores gerais da biblioteca.
+
+#### Paginação e filtros em listagens.
+- Consulta de livros, autores e usuários com filtros por nome, categoria e paginação de resultados.
+
+#### Geração de relatórios.
+- Exportação de dados em PDF ou CSV para controle da biblioteca.
+
+
 
 ---
 
